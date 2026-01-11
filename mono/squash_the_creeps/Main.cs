@@ -31,7 +31,10 @@ public partial class Main : Node
 		// And give it a random offset.
 		mobSpawnLocation.ProgressRatio = GD.Randf();
 
-		Vector3 playerPosition = GetNode<Player>("Player").Position;
+		Player player = GetNode<Player>("Player");
+
+		if (player == null) return;
+		Vector3 playerPosition = player.Position;
 		mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
 		// Spawn the mob by adding it to the Main scene.

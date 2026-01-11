@@ -110,6 +110,7 @@ public partial class Player : CharacterBody3D
 	{
 		EmitSignal(SignalName.Hit);
 		QueueFree();
+		GetTree().ReloadCurrentScene();
 	}
 
 	// We also specified this function name in PascalCase in the editor's connection window
